@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    family_nginx:
+        build:
+            context: ./nginx
+        volumes:
+            - ./../:/var/www/
+        ports:
+            - "80:80"
+        networks:
+            - microservices
+
+networks:
+    microservices:
+        external: true
